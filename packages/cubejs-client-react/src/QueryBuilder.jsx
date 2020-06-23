@@ -134,6 +134,11 @@ export default class QueryBuilder extends React.Component {
           [memberType]: (query[memberType] || []).concat(toQuery(member))
         });
       },
+      removeAll: () => {
+        return this.updateQuery({
+          [memberType]: []
+        });
+      },
       remove: (member) => {
         const { query } = this.state;
         const members = (query[memberType] || []).concat([]);
